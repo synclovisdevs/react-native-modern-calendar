@@ -2,6 +2,16 @@
 
 A modern, flexible calendar component for React Native with month and day views. This component provides a beautiful and customizable calendar interface with support for events, multi-day events, and easy switching between month and day views.
 
+## Features
+
+- 📅 Month and day view modes
+- 🔄 Smooth navigation between months/days
+- 📊 Customizable event display
+- 🎨 Configurable display options
+- 📱 Responsive design
+- 🔍 Event details and time display
+- 🎯 TypeScript support
+
 ## Installation
 
 ```bash
@@ -9,15 +19,6 @@ npm install react-native-modern-calendar
 # or
 yarn add react-native-modern-calendar
 ```
-
-## Features
-
-- Month view with event display
-- Day view with detailed event scheduling
-- Support for multi-day events
-- Customizable event display
-- Smooth navigation between months/days
-- Configurable display options
 
 ## Usage
 
@@ -57,6 +58,9 @@ const App = () => {
       events={events}
       config={calendarConfig}
       onModeChange={(mode) => console.log('Mode changed:', mode)}
+      onDateChange={(date) => {
+        console.log('Current displayed date:', date);
+      }}
     />
   );
 };
@@ -72,6 +76,7 @@ const App = () => {
 | events | Array | No | [] | Array of events to display |
 | config | Object | No | defaultConfig | Calendar configuration |
 | onModeChange | function | No | - | Callback when view mode changes |
+| onDateChange | function | No | - | Callback when displayed date changes (triggered by swipes or navigation) |
 
 ### Event Object
 

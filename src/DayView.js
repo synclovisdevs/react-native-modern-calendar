@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, FlatList, TouchableOpacity, Dimensions, ScrollView } from 'react-native';
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
@@ -10,9 +10,18 @@ const DayView = ({
   date, 
   events, 
   onBack,
-  config = {} 
+  config = {},
+  onDateChange = () => {}
 }) => {
   const [currentDate, setCurrentDate] = useState(date);
+
+  useEffect(() => {
+    onDateChange(currentDate);
+  }, [currentDate]);
+
+  const handleDateChange = (newDate) => {
+    setCurrentDate(newDate);
+  };
 
   const getEventsForDate = (date) => {
     return events.filter(event => {
@@ -213,7 +222,7 @@ const DayView = ({
     if (draggedIndex !== 1) {
       const newDate = new Date(currentDate);
       newDate.setDate(currentDate.getDate() + (draggedIndex - 1));
-      setCurrentDate(newDate);
+      handleDateChange(newDate);
     }
   };
 

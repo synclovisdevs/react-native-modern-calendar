@@ -75,7 +75,8 @@ const Calendar = ({
   },
   events = [],
   config = {},
-  onModeChange = () => {}
+  onModeChange = () => {},
+  onDateChange = () => {}
 }) => {
   const [currentDate, setCurrentDate] = useState(selectedDate);
   const [currentIndex, setCurrentIndex] = useState(1);
@@ -363,6 +364,7 @@ const Calendar = ({
 
   const handleMonthChange = (newDate) => {
     setCurrentDate(newDate);
+    onDateChange(newDate);
     // Reset to middle index
     requestAnimationFrame(() => {
       flatListRef.current?.scrollToIndex({ 
@@ -422,6 +424,7 @@ const Calendar = ({
         events={events}
         onBack={handleBack}
         config={config}
+        onDateChange={onDateChange}
       />
     );
   }
