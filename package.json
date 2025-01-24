@@ -1,1 +1,31 @@
- 
+{
+  "name": "react-native-modern-calendar",
+  "version": "1.0.0",
+  "description": "A modern, flexible calendar component for React Native with month and day views",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react-native",
+    "calendar",
+    "events",
+    "scheduler",
+    "month-view",
+    "day-view"
+  ],
+  "author": "",
+  "license": "MIT",
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-native": ">=0.60.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yourusername/react-native-modern-calendar.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/react-native-modern-calendar/issues"
+  },
+  "homepage": "https://github.com/yourusername/react-native-modern-calendar#readme"
+} 
